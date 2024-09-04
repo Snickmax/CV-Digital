@@ -1,0 +1,195 @@
+/* Estilos globales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f0f0f0; /* Fondo gris claro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Encabezado */
+#info {
+    display: flex;
+    align-items: center;
+}
+
+/* Encabezado */
+#encabezado {
+    background-color: #BCA0AB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* El encabezado ocupa todo el ancho */
+    padding: 20px;
+}
+
+#foto {
+    width: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+#info h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+/* Contacto en el encabezado */
+#contacto {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    gap: 20px; /* Espacio entre columnas */
+    margin-top: 10px;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+}
+
+#contacto ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#contacto ul li {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+#contacto ul li i {
+    margin-right: 10px;
+    color: #333;
+}
+
+/* Secciones en tarjeta */
+section {
+    background-color: white; /* Fondo blanco de la tarjeta */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 20px;
+    margin: 20px 0;
+    width: 80%; /* Ajusta según el tamaño deseado */
+    max-width: 800px; /* Ancho máximo de la tarjeta */
+    transition: box-shadow 0.5s ease; /* Transición suave para el cambio de color */
+}
+
+/* Títulos de secciones */
+h2 {
+    background-color: #333; /* Fondo gris oscuro */
+    color: white; /* Color del texto */
+    padding: 10px;
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+h3 {
+    background-color: #E0E0E0; /* Fondo gris claro */
+    color: #333; /* Color del texto */
+    padding: 8px;
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 10px 0; /* Espacio arriba y abajo */
+}
+
+p {
+    text-align: justify;
+}
+
+/* Estilo para cargos y fechas */
+.cargo-fecha {
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre cargo y fecha */
+    align-items: center; /* Centra verticalmente */
+    margin-top: 5px;
+}
+
+.cargo {
+    font-weight: bold; /* Texto en negritas */
+}
+
+.fecha {
+    font-weight: bold; /* Texto en negritas */
+    text-align: right; /* Alinea la fecha a la derecha */
+}
+
+/* Enlaces */
+section a {
+    text-decoration: none;
+    color: #333;
+}
+
+#contacto a {
+    color: #333;
+}
+
+#contacto ul li:hover .contactoInt,
+#contacto ul li:hover a {
+    color: rgb(42, 47, 186); /* Color deseado al pasar el cursor */
+}
+
+section a:hover {
+    color: #BCA0AB;
+}
+
+section:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.793); /* Sombra */
+}
+/* Sección de habilidades */
+.skill-list {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los ítems se envuelvan en la siguiente línea si es necesario */
+}
+
+.skill-list li {
+    flex-direction: column;
+    align-items: flex-start; /* Alinea los ítems a la izquierda */
+    width: calc(50% - 20px); /* Ancho de la mitad menos el espacio entre columnas */
+    margin-bottom: 20px; /* Espacio entre ítems */
+}
+
+.skill-list li span {
+    margin-bottom: 5px; /* Espacio entre el texto y las calificaciones */
+}
+
+.skill-rating {
+    display: flex;
+    align-items: center;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #BCA0AB;
+    margin-right: 5px;
+    background-color: #E0E0E0;
+    position: relative;
+}
+
+.circle.filled {
+    background-color: #BCA0AB;
+}
+
+.circle.half-filled {
+    background-color: #BCA0AB;
+}
+
+.circle.half-filled::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background-color: #E0E0E0;
+    border-radius: 0 50% 50% 0;
+    z-index: 1;
+}
+
+/* Cambia el color de los círculos al pasar el cursor */
+.skill-rating:hover .filled,
+.skill-rating:hover .half-filled
+{
+    background-color: #917e93; /* Color más intenso acorde al diseño al pasar el cursor */
+}
