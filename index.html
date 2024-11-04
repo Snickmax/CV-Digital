@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <title>Curriculum</title>
 </head>
 
@@ -30,6 +31,18 @@
                 </div>
             </div>
         </div>
+        <div id="social">
+            <a href="https://www.linkedin.com/in/victor-ibarra-espinoza-7a90912a7/" target="_blank">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a href="https://github.com/Snickmax" target="_blank">
+                <i class="fab fa-github fa-2x"></i>
+            </a>
+            <a href="#" id="download-cv">
+                <i class="fas fa-file-download fa-2x"></i>
+            </a>            
+        </div>
+
     </div>
 
     <!-- Presentacion -->
@@ -216,26 +229,22 @@
         <h2>CERTIFICADOS</h2>
         <ul>
             <li>
-                <a href="https://coursera.org/share/ab8e94638860797314235140e19b8830"
-                    target="_blank">
+                <a href="https://coursera.org/share/ab8e94638860797314235140e19b8830" target="_blank">
                     <strong>Developing Front-End Apps with React (IBM) </strong> - Coursera, 2024
                 </a>
             </li>
             <li>
-                <a href="https://coursera.org/share/f2d7c945110eff3f34c500911682942c"
-                    target="_blank">
+                <a href="https://coursera.org/share/f2d7c945110eff3f34c500911682942c" target="_blank">
                     <strong>Getting Started with Git and GitHub (IBM) </strong> - Coursera, 2024
                 </a>
             </li>
             <li>
-                <a href="https://coursera.org/share/bf2475cbd62fa5f87201c3332eee8206"
-                    target="_blank">
+                <a href="https://coursera.org/share/bf2475cbd62fa5f87201c3332eee8206" target="_blank">
                     <strong>Hands-on Introduction to Linux Commands and Shell Scripting (IBM) </strong> - Coursera, 2024
                 </a>
             </li>
             <li>
-                <a href="https://coursera.org/share/bb159b5a6db7fa7f87a12d16a79e2be1"
-                    target="_blank">
+                <a href="https://coursera.org/share/bb159b5a6db7fa7f87a12d16a79e2be1" target="_blank">
                     <strong>Introduction to Software Engineering (IBM) </strong> - Coursera, 2024
                 </a>
             </li>
@@ -252,6 +261,22 @@
             <li>Basketball</li>
         </ul>
     </section>
+    <script>
+        document.getElementById('download-cv').addEventListener('click', function (e) {
+            e.preventDefault(); // Evita que el enlace navegue
+
+            // Opciones de html2pdf
+            const options = {
+                filename: 'Curriculum_Victor_Ibarra_Espinoza.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+
+            // Selecciona todo el cuerpo de la página para convertir en PDF
+            html2pdf().set(options).from(document.body).save();
+        });
+    </script>
 
 </body>
 

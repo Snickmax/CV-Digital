@@ -63,6 +63,21 @@ body {
     color: #333;
 }
 
+#social {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#social a {
+    color: #333;
+    text-decoration: none;
+}
+
+#social a:hover {
+    color: #0073b1; /* Ajusta el color en hover, por ejemplo, azul para LinkedIn */
+}
+
 /* Secciones en tarjeta */
 section {
     background-color: white; /* Fondo blanco de la tarjeta */
