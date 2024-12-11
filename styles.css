@@ -10,6 +10,55 @@ body {
     align-items: center;
 }
 
+/* Secciones en tarjeta */
+section {
+    background-color: white; /* Fondo blanco de la tarjeta */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 20px;
+    margin: 20px 0;
+    width: 80%; /* Ajusta según el tamaño deseado */
+    max-width: 800px; /* Ancho máximo de la tarjeta */
+    transition: box-shadow 0.5s ease; /* Transición suave para el cambio de color */
+}
+
+/* Títulos de secciones */
+h2 {
+    background-color: #333; /* Fondo gris oscuro */
+    color: white; /* Color del texto */
+    padding: 10px;
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+h3 {
+    background-color: #E0E0E0; /* Fondo gris claro */
+    color: #333; /* Color del texto */
+    padding: 8px;
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 10px 0; /* Espacio arriba y abajo */
+    flex-grow: 1; /* Ocupa el espacio restante disponible */ 
+}
+
+p {
+    text-align: justify;
+
+}
+
+/* Enlaces */
+section a {
+    text-decoration: none;
+    color: #333;
+}
+
+section a:hover {
+    color: #BCA0AB;
+}
+
+section:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.793); /* Sombra */
+}
+
 /* Encabezado */
 #info {
     display: flex;
@@ -78,37 +127,13 @@ body {
     color: #0073b1; /* Ajusta el color en hover, por ejemplo, azul para LinkedIn */
 }
 
-/* Secciones en tarjeta */
-section {
-    background-color: white; /* Fondo blanco de la tarjeta */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-    padding: 20px;
-    margin: 20px 0;
-    width: 80%; /* Ajusta según el tamaño deseado */
-    max-width: 800px; /* Ancho máximo de la tarjeta */
-    transition: box-shadow 0.5s ease; /* Transición suave para el cambio de color */
+#contacto a {
+    color: #333;
 }
 
-/* Títulos de secciones */
-h2 {
-    background-color: #333; /* Fondo gris oscuro */
-    color: white; /* Color del texto */
-    padding: 10px;
-    border-radius: 5px; /* Bordes redondeados */
-    margin: 0; /* Elimina el margen por defecto */
-}
-
-h3 {
-    background-color: #E0E0E0; /* Fondo gris claro */
-    color: #333; /* Color del texto */
-    padding: 8px;
-    border-radius: 5px; /* Bordes redondeados */
-    margin: 10px 0; /* Espacio arriba y abajo */
-}
-
-p {
-    text-align: justify;
+#contacto ul li:hover .contactoInt,
+#contacto ul li:hover a {
+    color: rgb(42, 47, 186); /* Color deseado al pasar el cursor */
 }
 
 /* Estilo para cargos y fechas */
@@ -128,27 +153,54 @@ p {
     text-align: right; /* Alinea la fecha a la derecha */
 }
 
-/* Enlaces */
-section a {
-    text-decoration: none;
-    color: #333;
+.contentTitle {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre la imagen y el texto */
 }
 
-#contacto a {
-    color: #333;
+.logo {
+    height: 50px; /* Ajusta la altura de la imagen */
+    width: auto; /* Mantén la proporción de la imagen */
+
+    border-radius: 10px;
 }
 
-#contacto ul li:hover .contactoInt,
-#contacto ul li:hover a {
-    color: rgb(42, 47, 186); /* Color deseado al pasar el cursor */
+.timeline {
+    position: relative;
+    padding-left: 20px;
 }
 
-section a:hover {
-    color: #BCA0AB;
+.timeline-event {
+    position: relative;
+    padding-left: 40px;
+    padding-bottom: 1px;
 }
 
-section:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.793); /* Sombra */
+.timeline-event::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #000; /* Punto */
+}
+
+.timeline-content {
+    position: relative;
+    padding-left: 20px;
+}
+
+.timeline-event:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 8px; /* Controla la posición de la línea */
+    width: 2px;
+    height: 104%; /* Longitud de la línea */
+    background-color: #000; /* Línea */
 }
 /* Sección de habilidades */
 .skill-list {
